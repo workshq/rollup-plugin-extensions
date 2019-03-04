@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es5",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "strict": true,
+    "declarationDir": "lib/types",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "outDir": "lib/",
+    "baseUrl": "./src",
+  },
+  "exclude": [
+    "node_modules",
+    "lib",
+    "**/*.test.*"
+  ]
+}
