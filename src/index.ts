@@ -49,10 +49,12 @@ function addExtensionIfNecessary(file: string, extensions: Extensions) {
 
 
 type ExtensionsArgs = {
-  extensions: Extensions;
+  extensions?: Extensions;
 }
 
-export default function extensions({ extensions }: ExtensionsArgs): Plugin {
+const DEFAULT_EXTENSIONS = ['.mjs', '.js'];
+
+export default function extensions({ extensions = DEFAULT_EXTENSIONS }: ExtensionsArgs = {}): Plugin {
   if (extensions == null || extensions.length <= 0) {
     throw new Error(`[rollup-plugin-extensions] Extensions must be a non-empty array of strings.
       e.g "{ extensions: ['.ts, '.jsx', '.jsx'] }"

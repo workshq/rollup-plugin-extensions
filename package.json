@@ -1,7 +1,7 @@
 {
   "name": "rollup-plugin-extensions",
   "version": "0.0.1",
-  "description": "Allow rollup to resolve non .js local files",
+  "description": "Allow rollup to resolve local files with any extension",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/types/index.d.ts",
