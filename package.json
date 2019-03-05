@@ -10,6 +10,9 @@
     "type": "git",
     "url": "https://github.com/zelzen/rollup-plugin-extensions"
   },
+  "files": [
+    "lib"
+  ],
   "keywords": [
     "rollup-plugin",
     "rollup",
@@ -21,7 +24,8 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
-    "build:types": "tsc -p . --emitDeclarationOnly"
+    "build:types": "tsc -p . --emitDeclarationOnly",
+    "prepublishOnly": "yarn build && yarn build:types"
   },
   "devDependencies": {
     "rollup": "^1.4.1",
