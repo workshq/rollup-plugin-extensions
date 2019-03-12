@@ -24,7 +24,10 @@ export default {
     extensions({
       // Supporting Typescript files
       // Uses ".mjs, .js" by default
-      extensions: ['.tsx', '.ts', '.jsx', '.js']
+      extensions: ['.tsx', '.ts', '.jsx', '.js'],
+      // Resolves index dir files based on supplied extensions
+      // This is enable by default
+      resolveIndex: true,
     })
   ]
 };
@@ -43,7 +46,7 @@ If you need additional features like aliasing, commonjs support, or fully suppor
 
 ## Todo
 
-- [ ] - Add support for index file resolution
+- [ ] - Testing Suite
 
 
 ["Inspired" by Oskar](https://github.com/rollup/rollup/issues/1052#issuecomment-260068521)
