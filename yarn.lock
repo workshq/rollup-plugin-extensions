@@ -511,7 +511,7 @@ rollup-pluginutils@^2.3.0:
     estree-walker "^0.6.0"
     micromatch "^3.1.10"
 
-rollup-typescript@^1.2.0:
+rollup-typescript@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/rollup-typescript/-/rollup-typescript-1.2.0.tgz#8efb089269944b308ed84ff074809852503a0f3c"
   integrity sha512-zGtvk20cHXTIz5r/9YmrYT7WV1QqiNPQCVyxyQPsSYtPdBLNLqG9Yqqxg6irJfJcKYOmS2n4KsLlhi3XRk6mrA==
@@ -519,7 +519,7 @@ rollup-typescript@^1.2.0:
     rollup-pluginutils "^2.3.0"
     tslib "^1.9.3"
 
-rollup@^1.4.1:
+rollup@1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.4.1.tgz#cc03ef6fb49dd72a878e3da0131c0a3696de14a7"
   integrity sha512-YWf5zeR6SWtqZmCnuYs4a+ZJetj8NT4yfBMPXekWHW4L3144jM+J2AWagQVejB0FwCqjEUP9l8o4hg1rPDfQlg==
@@ -651,7 +651,7 @@ tslib@^1.9.3:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
 
-typescript@^3.3.3333:
+typescript@3.3.3333:
   version "3.3.3333"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.3.3333.tgz#171b2c5af66c59e9431199117a3bcadc66fdcfd6"
   integrity sha512-JjSKsAfuHBE/fB2oZ8NxtRTk5iGcg6hkYXMnZ3Wc+b2RSqejEqTaem11mHASMnFilHrax3sLK0GDzcJrekZYLw==
