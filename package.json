@@ -28,9 +28,9 @@
     "prepublishOnly": "yarn build && yarn build:types"
   },
   "devDependencies": {
-    "rollup": "^1.4.1",
-    "rollup-typescript": "^1.2.0",
-    "typescript": "^3.3.3333"
+    "rollup": "1.4.1",
+    "rollup-typescript": "1.2.0",
+    "typescript": "3.3.3333"
   },
   "peerDependencies": {
     "rollup": "^1.4.1"
