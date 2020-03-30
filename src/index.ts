@@ -1,8 +1,7 @@
 import fs from 'fs';
-import { posix } from 'path';
+import { basename, dirname, isAbsolute, resolve } from 'path';
 import { Plugin } from 'rollup';
-
-const { basename, dirname, isAbsolute, resolve } = posix;
+import { createFilter } from 'rollup-pluginutils';
 
 type Extensions = Array<string>;
 
@@ -82,6 +81,7 @@ type ExtensionsArgs = {
   extensions?: Extensions;
   /** If folder "index" files should be resolved. Will use extensions. */
   resolveIndex?: boolean;
+  include?:string[],exclude?:string[]
 }
 
 const DEFAULT_EXTENSIONS = ['.mjs', '.js'];
@@ -89,7 +89,9 @@ const DEFAULT_EXTENSIONS = ['.mjs', '.js'];
 export default function extensions({
   extensions = DEFAULT_EXTENSIONS,
   resolveIndex = true,
+  include,exclude
 }: ExtensionsArgs = {}): Plugin {
+  const filter = createFilter(include, exclude);
   if (extensions == null || extensions.length <= 0) {
     throw new Error(`[rollup-plugin-extensions] Extensions must be a non-empty array of strings.
       e.g "{ extensions: ['.ts, '.jsx', '.jsx'] }"
@@ -100,19 +102,26 @@ export default function extensions({
     name: 'extensions',
     resolveId(id, parent) {
       // Resolve absolute paths
-      if (isAbsolute(id)) return resolveFilePath(resolve(id), extensions, resolveIndex);
+      if (isAbsolute(id)){
+        if (!filter( id ) ) return;
+        return resolveFilePath(resolve(id), extensions, resolveIndex);
+      }
 
       // Parent will be undefined if this is an entry point.
       // Resolve against current working directory.
-      if (parent === undefined) return resolveFilePath(resolve(process.cwd(), id), extensions, resolveIndex);
+      var path=resolve(process.cwd(), id);
+      if (parent === undefined){
+        if (!filter( path ) ) return;
+        return resolveFilePath(path, extensions, resolveIndex);
+      }
 
       // Skip external modules at this stage
       if (id[0] !== '.') return null;
+      path=resolve(dirname(parent),id);// local file path
+      if (!filter( path ) ) return;
 
       // Resolve all local imports
-      return resolveFilePath(
-        // local file path
-        resolve(dirname(parent), id),
+      return resolveFilePath(path,
         extensions,
         resolveIndex
       );
