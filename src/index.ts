@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { basename, dirname, isAbsolute, resolve } from 'path';
 import { Plugin } from 'rollup';
-import { createFilter } from 'rollup-pluginutils';
+import { createFilter } from '@rollup/pluginutils';
 
 type Extensions = Array<string>;
 
