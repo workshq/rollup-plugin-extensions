@@ -34,5 +34,8 @@
   },
   "peerDependencies": {
     "rollup": "^1.4.1"
+  },
+  "dependencies": {
+    "@rollup/pluginutils": "^3.0.8"
   }
 }
