@@ -28,11 +28,11 @@
     "prepublishOnly": "yarn build && yarn build:types"
   },
   "devDependencies": {
-    "rollup": "1.27.2",
+    "rollup": "3.28.0",
     "rollup-typescript": "1.2.1",
     "typescript": "3.7.2"
   },
   "peerDependencies": {
-    "rollup": "^1.4.1"
+    "rollup": "^1.4.1 || ^3.0.0"
   }
 }
